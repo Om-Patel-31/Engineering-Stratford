@@ -157,3 +157,52 @@ main {
         display: block;
     }
 }
+
+.content-area1{
+    width: 200px;
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px 5px #343232;
+    padding: 20px;
+    margin: 50px;
+    margin-top: 5%;
+    justify-self: flex-start;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    word-wrap: normal;
+    background-color: #b6985a;
+    color: white;
+}
+
+.content-area2{
+    width: 200px;
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 10px 15px 5px #343232;
+    padding: 20px;
+    padding-bottom: 200px;
+    margin: 50px;
+    margin-top: 5%;
+    justify-self: flex-start;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    word-wrap: normal;
+    background-color: #b6985a;
+    color: white;
+}
+
+.display-card{
+    height: 40%;
+    width: 40%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px #3c3737;
+}
+
+.content-areas{
+    display: inline-flex;
+    gap: 50px;
+}
