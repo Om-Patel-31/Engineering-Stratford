@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | ElectraQuest</title>
     <link rel="stylesheet" href="dashboard.css">
+    <script src="login.js"></script>
 </head>
 <body>
+    <script src="login.js"></script>
     <header class="header">
         <nav>
             <div class="logo">ElectraQuest</div>
@@ -44,30 +46,37 @@
     </header>
     
     <div class="content-areas">
-        <div class="content-area1">
-            <img class="display-card" src="./images/eng_strat_logo.png" alt="Hardware Display Card">
-            <h1>Home</h1>
-            <hr>
-            <h5>Your launchpad to explore, learn, and create: all in one place.</h5>
+        <a href="./home.html" style="text-decoration: none;">
+            <div class="content-area1">
+                <img class="display-card" src="./images/eng_strat_logo.png" alt="Home Display Card">
+                <h1>Home</h1>
+                <hr>
+                <h5>Your launchpad to explore, learn, and create: all in one place.</h5>
+            </div>
+        </a>
+        <a href="./hardware.html" style="text-decoration: none;">
+            <div class="content-area2">
+                <img class="display-card" src="./images/hardwareDisplayCard.png" alt="Hardware Display Card">
+                <h1>Hardware</h1>
+                <hr>
+                <h5>Learning how to use real-life electronics to your advantage.</h5>
+            </div>
+            <a href="./programming.html" style="text-decoration: none;">
+                <div class="content-area3">
+                    <img class="display-card" src="./images/programmingDisplayCard.png" alt="Programming Display Card">
+                    <h1>Programming</h1>
+                    <hr>
+                    <h5>Unlock the power to build the future, one line of code at a time.</h5>
+                </div>
+            </a>
+            <a href="./about.html" style="text-decoration: none;">
+                <div class="content-area4">
+                    <img class="display-card" src="./images/aboutDisplayCard.png" alt="About Display Card">
+                    <h1>About</h1>
+                    <hr>
+                    <h5>Get to know the story, vision, and people behind the innovation.</h5>
+                </div>
+            </a>
         </div>
-        <div class="content-area2">
-            <img class="display-card" src="./images/hardwareDisplayCard.png" alt="Hardware Display Card">
-            <h1>Hardware</h1>
-            <hr>
-            <h5>Learning how to use real-life electronics to your advantage.</h5>
-        </div>
-        <div class="content-area1">
-            <img class="display-card" src="./images/programmingDisplayCard.png" alt="Hardware Display Card">
-            <h1>Programming</h1>
-            <hr>
-            <h5>Your launchpad to explore, learn, and create: all in one place.</h5>
-        </div>
-        <div class="content-area2">
-            <img class="display-card" src="./images/aboutDisplayCard.png" alt="Hardware Display Card">
-            <h1>About</h1>
-            <hr>
-            <h5>Learning how to use real-life electronics to your advantage.</h5>
-        </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
