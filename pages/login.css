@@ -164,7 +164,7 @@ main {
 }
 
 .login-box{
-    width: fit-content;
+    width:auto;
     justify-self: center;
 }
 
@@ -181,6 +181,7 @@ input:hover{
     border-radius: 20px;
     border-color: var(--primary-color);
     color: var(--secondary-color);
+    width: max-content;
 }
 
 legend{
