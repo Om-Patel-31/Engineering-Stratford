@@ -169,19 +169,19 @@ main {
 }
 
 .form-group{
-    font-size: 30px;
+    font-size: 2rem;
     color: var(--primary-color);
     text-shadow: 10px 5px 5px var(--secondary-color);
 }
 
 input,
 input:hover{
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: center;
     border-radius: 20px;
     border-color: var(--primary-color);
     color: var(--secondary-color);
-    width: max-content;
+    width: 100%;
 }
 
 legend{
@@ -202,4 +202,27 @@ fieldset{
     padding: 50px;
     background-color: #b6985a;
     border-color: var(--primary-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .form-group {
+        font-size: 1.5rem;
+    }
+
+    input,
+    input:hover {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group {
+        font-size: 1.25rem;
+    }
+
+    input,
+    input:hover {
+        font-size: 0.875rem;
+    }
 }
