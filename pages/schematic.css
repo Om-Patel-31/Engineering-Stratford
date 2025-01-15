@@ -156,4 +156,44 @@ main {
     .menu li:hover .submenu {
         display: block;
     }
+
+    .sidebar {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #b6985a;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .sidebar .menu {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+        background-color: #b6985a;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        border-radius: 5px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1001;
+    }
 }
