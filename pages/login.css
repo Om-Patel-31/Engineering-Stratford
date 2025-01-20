@@ -2,21 +2,22 @@ body {
     display: flex;
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-    flex-direction: column; /* Stack items vertically on small screens */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 
 .sidebar {
     width: 250px;
-    background-color:  #b6985a; /* Changed background color */
+    background-color: #b6985a;
     color: #ddd;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     padding-top: 20px;
+    z-index: 1000;
 }
 
 .sidebar .logo {
@@ -54,7 +55,7 @@ body {
 }
 
 .submenu li {
-    background-color: #d4b88a; /* Lighter tone of the background color */
+    background-color: #d4b88a;
 }
 
 .submenu li a {
@@ -68,14 +69,14 @@ body {
 }
 
 .header {
-    background-color: #b6985a; /* Apply same background color */
+    background-color: #b6985a;
     color: #ddd;
     padding: 10px;
     text-align: center;
 }
 
 .footer {
-    background-color: #b6985a; /* Apply same background color */
+    background-color: #b6985a;
     color: #ddd;
     padding: 10px;
     text-align: center;
@@ -85,7 +86,7 @@ body {
 }
 
 .button {
-    background-color: #b6985a; /* Apply same background color */
+    background-color: #b6985a;
     color: #ddd;
     border: none;
     padding: 10px 20px;
@@ -93,7 +94,7 @@ body {
 }
 
 .button:hover {
-    background-color: #d4b88a; /* Lighter tone of the background color */
+    background-color: #d4b88a;
 }
 
 .login-box {
@@ -151,16 +152,19 @@ body {
     text-align: center;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     .sidebar {
         width: 100%;
         height: auto;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
     }
 
     .content {
         margin-left: 0;
+        margin-top: 60px;
     }
 
     .header, .footer {
@@ -170,12 +174,29 @@ body {
     .login-box {
         width: 100%;
         box-sizing: border-box;
+        padding-top: 175px;
+        height: 100%;
     }
 }
 
 @media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 60px;
+    }
+
     .sidebar ul li {
-        padding: 5px;
+        padding: 10px;
+        font-size: 14px;
     }
 
     .login-box {
