@@ -82,7 +82,7 @@ body {
     flex-wrap: wrap;
     justify-content: center; /* Center the content areas */
     padding: 20px;
-    margin-left: 325px; /* Move content areas more to the right */
+    margin-left: 32w5px; /* Move content areas more to the right */
 }
 
 .content-area1, .content-area2, .content-area3, .content-area4 {
