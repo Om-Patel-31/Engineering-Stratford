@@ -48,9 +48,16 @@ body {
 
 .sidebar ul li:hover .submenu {
     display: block;
-    padding: 20px;
-    flex-grow: 1;
 }
+
+.submenu li {
+    background-color: #d4b88a;
+}
+
+.submenu li a {
+    padding-left: 20px;
+}
+
 .header {
     background-color: #b6985a; /* Apply same background color */
     color: #ddd;
