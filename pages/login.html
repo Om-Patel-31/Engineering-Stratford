@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | ElectraQuest</title>
     <link rel="stylesheet" href="login.css">
-    <script src="login.js"></script>
+    <script src="login.js" defer></script>
 </head>
 <body>    
     <div class="sidebar">
@@ -43,7 +43,7 @@
     </div>
     <main>
         <div class="login-box">
-            <fieldset>
+            <fieldset id="loginFieldset"></fieldset>
                 <legend>Login</legend>
                 <form id="loginForm">
                     <div class="form-group">
@@ -60,6 +60,10 @@
                     <p id="message"></p>
                 </form>
             </fieldset>
+            <div id="userEmail"></div>
+                <p>You are signed in as: <span id="emailDisplay"></span></p>
+                <button id="logoutButton" class="btn">Logout</button>
+            </div>
         </div>
     </main>
 </body>
