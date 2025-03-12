@@ -101,7 +101,7 @@ body {
     margin: 20px;
     padding: 20px;
     text-align: center;
-    width: 500px; /* Increased width */
+    width: 200px; /* Reduced width */
     transition: transform 0.3s;
 }
 
