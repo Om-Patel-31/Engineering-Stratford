@@ -152,6 +152,21 @@ body {
     text-align: center;
 }
 
+#profileSection {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#videoElement {
+    margin-top: 10px;
+}
+
+#profilePicture {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
 @media (max-width: 760px) {
     .sidebar {
         width: 100%;

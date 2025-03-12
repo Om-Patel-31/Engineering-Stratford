@@ -9,6 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loginForm = document.getElementById("loginForm");
     const messageElement = document.getElementById("message");
+    const profileSection = document.getElementById("profileSection");
+    const profileEmail = document.getElementById("profileEmail");
+    const profilePicture = document.getElementById("profilePicture");
+    const captureButton = document.getElementById("captureButton");
+    const retakeButton = document.getElementById("retakeButton");
+    const confirmButton = document.getElementById("confirmButton");
+    const videoElement = document.getElementById("videoElement");
+    const canvasElement = document.getElementById("canvasElement");
 
     // Password to validate
     const validPassword = "EngineeringStratford";
@@ -39,8 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 messageElement.textContent = "Login successful!";
                 messageElement.className = "success";
 
-                // Save login status in sessionStorage
+                // Save login status and email in sessionStorage
                 sessionStorage.setItem("loggedIn", "true");
+                sessionStorage.setItem("email", usernameInput);
 
                 // Redirect to the home page
                 window.location.href = "home.html";
@@ -64,8 +73,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Check login status when accessing other pages
-    if (!sessionStorage.getItem("loggedIn")) {
-        const currentPage = window.location.pathname.split("/").pop();
+    if (sessionStorage.getItem("loggedIn")) {
+        const email = sessionStorage.getItem("email");
+        profileEmail.textContent = email;
+        profileSection.style.display = "block";
+
+        // Initialize camera stream
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                videoElement.srcObject = stream;
+            })
+            .catch((err) => {
+                console.error("Error accessing camera: ", err);
+            });
+
+        captureButton.addEventListener("click", () => {
+            const context = canvasElement.getContext("2d");
+            context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+            profilePicture.src = canvasElement.toDataURL("image/png");
+            profilePicture.style.display = "block";
+            confirmButton.style.display = "inline-block";
+            retakeButton.style.display = "inline-block";
+        });
+
+        retakeButton.addEventListener("click", () => {
+            profilePicture.style.display = "none";
+            confirmButton.style.display = "none";
+            retakeButton.style.display = "none";
+        });
+
+        confirmButton.addEventListener("click", () => {
+            alert("Profile picture set successfully!");
+            confirmButton.style.display = "none";
+            retakeButton.style.display = "none";
+        });
+    } else {
         if (currentPage !== "login.html") {
             alert("You must sign in first!");
             window.location.href = "login.html";

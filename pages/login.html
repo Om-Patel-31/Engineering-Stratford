@@ -43,7 +43,7 @@
     </div>
     <main>
         <div class="login-box">
-            <fieldset id="loginFieldset"></fieldset>
+            <fieldset id="loginFieldset">
                 <legend>Login</legend>
                 <form id="loginForm">
                     <div class="form-group">
@@ -60,8 +60,14 @@
                     <p id="message"></p>
                 </form>
             </fieldset>
-            <div id="userEmail"></div>
-                <p>You are signed in as: <span id="emailDisplay"></span></p>
+            <div id="profileSection" class="hidden">
+                <p>You are signed in as: <span id="profileEmail"></span></p>
+                <video id="videoElement" width="320" height="240" autoplay></video>
+                <canvas id="canvasElement" width="320" height="240"></canvas>
+                <img id="profilePicture" alt="Profile Picture">
+                <button id="captureButton" class="btn">Capture</button>
+                <button id="retakeButton" class="btn">Retake</button>
+                <button id="confirmButton" class="btn">Confirm</button>
                 <button id="logoutButton" class="btn">Logout</button>
             </div>
         </div>
