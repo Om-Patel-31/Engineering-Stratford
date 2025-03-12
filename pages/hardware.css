@@ -92,7 +92,7 @@ body {
     margin-left: 325px; /* Move content areas more to the right */
 }
 
-.content-area1, .content-area2, .content-area3, .content-area4 {
+.content-area1, .content-area2 {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -104,7 +104,7 @@ body {
     transition: transform 0.3s;
 }
 
-.content-area1:hover, .content-area2:hover, .content-area3:hover, .content-area4:hover {
+.content-area1:hover, .content-area2:hover {
     transform: translateY(-10px);
 }
 
