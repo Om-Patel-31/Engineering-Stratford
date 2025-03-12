@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const videoElement = document.getElementById("videoElement");
     const canvasElement = document.getElementById("canvasElement");
     const flashElement = document.getElementById("flash");
+    const loginBox = document.querySelector(".login-box");
 
     // Password to validate
     const validPassword = "EngineeringStratford";
@@ -52,6 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 sessionStorage.setItem("loggedIn", "true");
                 sessionStorage.setItem("email", usernameInput);
 
+                // Hide the login box
+                loginBox.classList.add("hidden");
+
                 // Redirect to the home page
                 window.location.href = "home.html";
             } else {
@@ -78,6 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = sessionStorage.getItem("email");
         profileEmail.textContent = email;
         profileSection.style.display = "block";
+
+        // Hide the login box
+        loginBox.classList.add("hidden");
 
         // Initialize camera stream
         navigator.mediaDevices.getUserMedia({ video: true })

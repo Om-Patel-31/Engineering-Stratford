@@ -218,6 +218,10 @@ body {
     }
 }
 
+.hidden {
+    display: none;
+}
+
 @media (max-width: 760px) {
     .sidebar {
         width: 100%;
