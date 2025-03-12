@@ -92,12 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
             context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
             profilePicture.src = canvasElement.toDataURL("image/png");
             profilePicture.style.display = "block";
+            videoElement.style.display = "none";
             confirmButton.style.display = "inline-block";
             retakeButton.style.display = "inline-block";
         });
 
         retakeButton.addEventListener("click", () => {
             profilePicture.style.display = "none";
+            videoElement.style.display = "block";
             confirmButton.style.display = "none";
             retakeButton.style.display = "none";
         });

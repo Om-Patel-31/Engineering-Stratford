@@ -159,6 +159,8 @@ body {
 
 #videoElement {
     margin-top: 10px;
+    border: 5px solid #000;
+    filter: sepia(1) contrast(1.2) brightness(0.9);
 }
 
 #profilePicture {
