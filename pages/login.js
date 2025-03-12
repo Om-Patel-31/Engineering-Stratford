@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const confirmButton = document.getElementById("confirmButton");
     const videoElement = document.getElementById("videoElement");
     const canvasElement = document.getElementById("canvasElement");
+    const flashElement = document.getElementById("flash");
 
     // Password to validate
     const validPassword = "EngineeringStratford";
@@ -89,6 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
         captureButton.addEventListener("click", () => {
+            // Flash effect
+            flashElement.classList.add("active");
+            setTimeout(() => {
+                flashElement.classList.remove("active");
+            }, 500);
+
             const context = canvasElement.getContext("2d");
             context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
             profilePicture.src = canvasElement.toDataURL("image/png");
