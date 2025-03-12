@@ -35,18 +35,6 @@ body {
 .sidebar ul li a:hover {
     background-color: #b6985a;
 }
-.submenu {
-    display: none;
-}
-.sidebar ul li:hover .submenu {
-    display: block;
-}
-.submenu li {
-    background-color: #d4b88a; /* Lighter tone of the background color */
-}
-.submenu li a {
-    padding-left: 20px;
-}
 .content {
     margin-left: 250px;
     padding: 20px;
