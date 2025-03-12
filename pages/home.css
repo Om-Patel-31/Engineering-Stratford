@@ -90,7 +90,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center the content areas */
-    padding: 20px;
+    padding: 40px;
     margin-left: 325px; /* Move content areas more to the right */
 }
 
@@ -98,10 +98,10 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 20px;
+    margin: 30px;
+    padding: 40px;
     text-align: center;
-    width: 200px; /* Reduced width */
+    width: 300px; /* Reduced width */
     transition: transform 0.3s;
 }
 
