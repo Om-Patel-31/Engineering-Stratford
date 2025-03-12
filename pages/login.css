@@ -97,6 +97,13 @@ body {
     background-color: #d4b88a;
 }
 
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
 .login-box {
     padding: 20px;
     border: 1px solid #ddd;
@@ -153,6 +160,9 @@ body {
 }
 
 #profileSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
     text-align: center;
 }
@@ -161,12 +171,18 @@ body {
     margin-top: 10px;
     border: 5px solid #000;
     filter: sepia(1) contrast(1.2) brightness(0.9);
+    display: none;
+}
+
+#canvasElement {
+    display: none;
 }
 
 #profilePicture {
     margin-top: 10px;
     max-width: 100%;
     border-radius: 50%;
+    display: none;
 }
 
 @media (max-width: 760px) {

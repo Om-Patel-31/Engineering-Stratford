@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navigator.mediaDevices.getUserMedia({ video: true })
             .then((stream) => {
                 videoElement.srcObject = stream;
+                videoElement.style.display = "block";
             })
             .catch((err) => {
                 console.error("Error accessing camera: ", err);
@@ -93,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             profilePicture.src = canvasElement.toDataURL("image/png");
             profilePicture.style.display = "block";
             videoElement.style.display = "none";
+            canvasElement.style.display = "none";
             confirmButton.style.display = "inline-block";
             retakeButton.style.display = "inline-block";
         });
