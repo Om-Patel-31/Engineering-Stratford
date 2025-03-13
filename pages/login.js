@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvasElement = document.getElementById("canvasElement");
     const flashElement = document.getElementById("flash");
     const loginBox = document.querySelector(".login-box");
+    const logoutButton = document.getElementById("logoutButton");
 
     // Password to validate
     const validPassword = "EngineeringStratford";
@@ -124,6 +125,14 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Profile picture set successfully!");
             confirmButton.style.display = "none";
             retakeButton.style.display = "none";
+        });
+
+        logoutButton.addEventListener("click", () => {
+            // Clear session storage
+            sessionStorage.clear();
+
+            // Redirect to the login page
+            window.location.href = "login.html";
         });
     } else {
         if (currentPage !== "login.html") {
