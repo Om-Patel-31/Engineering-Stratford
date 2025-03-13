@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginBox = document.querySelector(".login-box");
     const logoutButton = document.getElementById("logoutButton");
     const placeholderImage = document.getElementById("placeholderImage");
+    const flashSound = document.getElementById("flashSound");
+    const captureGif = document.getElementById("captureGif");
 
     // Password to validate
     const validPassword = "EngineeringStratford";
@@ -100,9 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
         captureButton.addEventListener("click", () => {
             // Flash effect
             flashElement.classList.add("active");
+            flashSound.play(); // Play the flash sound
+            captureGif.style.display = "block"; // Show the GIF
             setTimeout(() => {
                 flashElement.classList.remove("active");
-            }, 500);
+                captureGif.style.display = "none"; // Hide the GIF after the flash
+            }, 2000); // Longer flash duration
 
             const context = canvasElement.getContext("2d");
             context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);

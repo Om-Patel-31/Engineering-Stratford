@@ -155,9 +155,7 @@ body {
     position: relative;
     width: 320px;
     height: 240px;
-    border: 10px solid #000;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    background: #fff;
+    background: #ffffff00;
 }
 
 #placeholderImage {
@@ -186,6 +184,19 @@ body {
     height: 100%;
     display: none;
     transform: scaleX(-1); /* Flip horizontally */
+    filter: sepia(1) contrast(1.2) brightness(0.9); /* Retro style */
+    border: 10px solid #000; /* Retro picture film border */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#captureGif {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
 }
 
 .flash {
@@ -201,7 +212,7 @@ body {
 
 .flash.active {
     opacity: 1;
-    animation: flash-animation 1.5s ease-out;
+    animation: flash-animation 2s ease-out; /* Longer flash duration */
 }
 
 @keyframes flash-animation {
