@@ -181,6 +181,11 @@ body {
     height: 100%;
     filter: sepia(1) contrast(1.2) brightness(0.9);
     display: none;
+    -o-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 #canvasElement {
