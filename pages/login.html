@@ -35,21 +35,15 @@
                     </form>
                 </fieldset>
             </div>
+            <div class="camera-container">
+                <video id="videoElement" autoplay></video>
+                <button id="captureButton" class="capture-button" title="Capture">Capture</button>
+                <canvas id="canvasElement" class="hidden"></canvas>
+            </div>
             <div id="profileSection" class="hidden">
                 <p>You are signed in as: <span id="profileEmail"></span></p>
-                <div class="camera-frame">
-                    <img id="placeholderImage" src="/pages/images/placeholder-image.png" alt="Placeholder Image">
-                    <video id="videoElement" width="320" height="240" autoplay></video>
-                    <canvas id="canvasElement" width="320" height="240"></canvas>
-                    <img id="profilePicture" alt="Profile Picture">
-                    <img id="captureGif" src="/pages/images/capture.gif" alt="Capture GIF" class="hidden">
-                </div>
-                <button id="captureButton" class="btn">Capture</button>
-                <button id="retakeButton" class="btn">Retake</button>
-                <button id="confirmButton" class="btn">Confirm</button>
+                <img id="profilePicture" src="" alt="Profile Picture">
                 <button id="logoutButton" class="btn">Logout</button>
-                <div id="flash" class="flash"></div>
-                <audio id="flashSound" src="/pages/sounds/flash-sound.mp3"></audio>
             </div>
         </div>
     </main>

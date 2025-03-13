@@ -13,16 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const profileEmail = document.getElementById("profileEmail");
     const profilePicture = document.getElementById("profilePicture");
     const captureButton = document.getElementById("captureButton");
-    const retakeButton = document.getElementById("retakeButton");
-    const confirmButton = document.getElementById("confirmButton");
     const videoElement = document.getElementById("videoElement");
     const canvasElement = document.getElementById("canvasElement");
-    const flashElement = document.getElementById("flash");
     const loginBox = document.querySelector(".login-box");
     const logoutButton = document.getElementById("logoutButton");
-    const placeholderImage = document.getElementById("placeholderImage");
-    const flashSound = document.getElementById("flashSound");
-    const captureGif = document.getElementById("captureGif");
 
     // Password to validate
     const validPassword = "EngineeringStratford";
@@ -90,7 +84,16 @@ document.addEventListener("DOMContentLoaded", () => {
         // Hide the login box
         loginBox.classList.add("hidden");
 
-        // Initialize camera stream
+        // Display the profile picture if it exists
+        const profilePicturePath = `profile_pictures/${email}.png`;
+        fetch(profilePicturePath)
+            .then(response => {
+                if (response.ok) {
+                    profilePicture.src = profilePicturePath;
+                }
+            });
+
+        // Initialize the camera
         navigator.mediaDevices.getUserMedia({ video: true })
             .then((stream) => {
                 videoElement.srcObject = stream;
@@ -100,38 +103,28 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
         captureButton.addEventListener("click", () => {
-            // Flash effect
-            flashElement.classList.add("active");
-            flashSound.play(); // Play the flash sound
-            captureGif.style.display = "block"; // Show the GIF
-            setTimeout(() => {
-                flashElement.classList.remove("active");
-                captureGif.style.display = "none"; // Hide the GIF after the flash
-            }, 2000); // Longer flash duration
-
             const context = canvasElement.getContext("2d");
             context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
-            profilePicture.src = canvasElement.toDataURL("image/png");
-            profilePicture.style.display = "block";
-            videoElement.style.display = "none";
-            canvasElement.style.display = "none";
-            placeholderImage.style.display = "none";
-            confirmButton.style.display = "inline-block";
-            retakeButton.style.display = "inline-block";
-        });
 
-        retakeButton.addEventListener("click", () => {
-            profilePicture.style.display = "none";
-            videoElement.style.display = "block";
-            placeholderImage.style.display = "block";
-            confirmButton.style.display = "none";
-            retakeButton.style.display = "none";
-        });
-
-        confirmButton.addEventListener("click", () => {
-            alert("Profile picture set successfully!");
-            confirmButton.style.display = "none";
-            retakeButton.style.display = "none";
+            // Save the captured image
+            const dataUrl = canvasElement.toDataURL("image/png");
+            const username = sessionStorage.getItem("email");
+            fetch(`/save_image`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ username, dataUrl })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Profile picture saved successfully!");
+                    profilePicture.src = dataUrl;
+                } else {
+                    alert("Failed to save profile picture.");
+                }
+            });
         });
 
         logoutButton.addEventListener("click", () => {
