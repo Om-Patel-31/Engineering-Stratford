@@ -85,13 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
         loginBox.classList.add("hidden");
 
         // Display the profile picture if it exists
-        const profilePicturePath = `profile_pictures/${email}.png`;
-        fetch(profilePicturePath)
-            .then(response => {
-                if (response.ok) {
-                    profilePicture.src = profilePicturePath;
-                }
-            });
+        const profilePictureData = localStorage.getItem(`profile_picture_${email}`);
+        if (profilePictureData) {
+            profilePicture.src = profilePictureData;
+        }
 
         // Initialize the camera
         navigator.mediaDevices.getUserMedia({ video: true })
@@ -109,22 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // Save the captured image
             const dataUrl = canvasElement.toDataURL("image/png");
             const username = sessionStorage.getItem("email");
-            fetch(`/save_image`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ username, dataUrl })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert("Profile picture saved successfully!");
-                    profilePicture.src = dataUrl;
-                } else {
-                    alert("Failed to save profile picture.");
-                }
-            });
+            localStorage.setItem(`profile_picture_${username}`, dataUrl);
+            profilePicture.src = dataUrl;
+            alert("Profile picture saved successfully!");
         });
 
         logoutButton.addEventListener("click", () => {
