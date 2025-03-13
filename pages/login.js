@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const flashElement = document.getElementById("flash");
     const loginBox = document.querySelector(".login-box");
     const logoutButton = document.getElementById("logoutButton");
+    const placeholderImage = document.getElementById("placeholderImage");
 
     // Password to validate
     const validPassword = "EngineeringStratford";
@@ -91,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
         navigator.mediaDevices.getUserMedia({ video: true })
             .then((stream) => {
                 videoElement.srcObject = stream;
-                videoElement.style.display = "block";
             })
             .catch((err) => {
                 console.error("Error accessing camera: ", err);
@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             profilePicture.style.display = "block";
             videoElement.style.display = "none";
             canvasElement.style.display = "none";
+            placeholderImage.style.display = "none";
             confirmButton.style.display = "inline-block";
             retakeButton.style.display = "inline-block";
         });
@@ -117,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         retakeButton.addEventListener("click", () => {
             profilePicture.style.display = "none";
             videoElement.style.display = "block";
+            placeholderImage.style.display = "block";
             confirmButton.style.display = "none";
             retakeButton.style.display = "none";
         });
