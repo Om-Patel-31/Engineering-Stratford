@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvasElement = document.getElementById("canvasElement");
     const loginBox = document.querySelector(".login-box");
     const logoutButton = document.getElementById("logoutButton");
+    const logo = document.getElementById("logo");
 
     // Password to validate
     const validPassword = "EngineeringStratford";
@@ -83,6 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Hide the login box
         loginBox.classList.add("hidden");
+
+        // Highlight the logo
+        logo.classList.add("highlight");
 
         // Display the profile picture if it exists
         const profilePictureData = localStorage.getItem(`profile_picture_${email}`);

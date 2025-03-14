@@ -8,6 +8,11 @@ body {
     background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 }
 
+a .logo {
+    color: white;
+    text-decoration: none;
+}
+
 .sidebar {
     width: 250px;
     background-color: #b6985a;
@@ -26,6 +31,15 @@ body {
     font-size: 24px;
     margin-bottom: 20px;
     font-weight: bold;
+    color: #ddd;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.sidebar .logo.highlight {
+    color: #fff;
+    background-color: #d4b88a;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .sidebar ul {
