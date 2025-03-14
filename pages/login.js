@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginBox = document.querySelector(".login-box");
     const logoutButton = document.getElementById("logoutButton");
     const logo = document.getElementById("logo");
+    const logoLink = document.getElementById("logoLink");
 
     // Password to validate
     const validPassword = "EngineeringStratford";
@@ -85,8 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Hide the login box
         loginBox.classList.add("hidden");
 
-        // Highlight the logo
+        // Highlight the logo and make it a link
         logo.classList.add("highlight");
+        logoLink.href = "home.html";
 
         // Display the profile picture if it exists
         const profilePictureData = localStorage.getItem(`profile_picture_${email}`);
