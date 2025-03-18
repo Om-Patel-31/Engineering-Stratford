@@ -225,8 +225,8 @@ a .logo {
 }
 
 #profilePicture {
-    width: 400px; /* Increased size */
-    height: 400px; /* Increased size */
+    width: 350px; /* Increased size */
+    height: 350px; /* Increased size */
     border-radius: 50%;
     margin-bottom: 10px;
     border: 2px solid #b6985a;
